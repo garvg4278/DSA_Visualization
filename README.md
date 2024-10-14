@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # DSA_Visualization
 =======
 # Visual Algorithm Explorer
@@ -55,7 +55,7 @@ To run this project, ensure that you have the following installed:
 ### Steps to Set Up
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/HarshitRaj23/DSA-visualizer.git]
+   git clone [https://github.com/garvg4278/DSA_Visualization.git]
 
 2. Install the Dependencies
    ```bash
@@ -107,4 +107,3 @@ Contributions are welcome! If you'd like to contribute to the Visual Algorithm E
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
->>>>>>> 9ce5568 (Completed Project)
