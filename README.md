@@ -1,6 +1,5 @@
 
 # DSA_Visualization
-=======
 # Visual Algorithm Explorer
 
 The **Visual Algorithm Explorer** is an interactive web platform that provides users with an intuitive and engaging way to explore various algorithms and data structures. By utilizing **HTML, CSS, JavaScript**, and **Python** for dynamic visual content, and implementing core algorithms in **Java**, this project simplifies complex topics through interactive visualization.
