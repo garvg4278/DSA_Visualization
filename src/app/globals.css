@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-background: hsl(222 18% 7%);
+  --color-background-subtle: hsl(222 18% 9%);
+  --color-surface: hsl(222 16% 11%);
+  --color-surface-raised: hsl(222 14% 14%);
+  --color-surface-overlay: hsl(222 14% 17%);
+  --color-border: hsl(220 12% 20%);
+  --color-border-subtle: hsl(220 10% 15%);
+  --color-foreground: hsl(220 20% 94%);
+  --color-foreground-2: hsl(220 12% 65%);
+  --color-foreground-3: hsl(220 10% 42%);
+  --color-foreground-4: hsl(220 8% 28%);
+  --color-accent: hsl(258 90% 70%);
+  --color-accent-dim: hsl(258 60% 55%);
+  --color-green: hsl(142 71% 52%);
+  --color-green-dim: hsl(142 50% 40%);
+  --color-amber: hsl(38 92% 58%);
+  --color-red: hsl(346 87% 65%);
+  --color-blue: hsl(199 89% 60%);
+  --color-purple: hsl(262 83% 70%);
+  --color-viz-default: hsl(220 14% 35%);
+  --color-viz-compare: hsl(38 92% 58%);
+  --color-viz-swap: hsl(346 87% 65%);
+  --color-viz-pivot: hsl(262 83% 70%);
+  --color-viz-sorted: hsl(142 71% 52%);
+  --color-viz-found: hsl(142 71% 52%);
+  --color-viz-active: hsl(199 89% 60%);
+
+  /* Fonts */
+  --font-family-sans: 'Outfit', system-ui, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Border radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+
+  /* Shadows */
+  --shadow-surface: 0 4px 12px hsl(222 18% 4% / 0.5), 0 1px 3px hsl(222 18% 4% / 0.3);
+  --shadow-surface-lg: 0 8px 32px hsl(222 18% 4% / 0.6);
+  --shadow-glow-sm: 0 0 12px hsl(258 90% 70% / 0.2);
+  --shadow-glow: 0 0 24px hsl(258 90% 70% / 0.25), 0 0 48px hsl(258 90% 70% / 0.1);
+  --shadow-glow-green: 0 0 20px hsl(142 71% 52% / 0.3);
+
+  /* Animations */
+  --animate-fade-in: fade-in 0.4s ease-out both;
+  --animate-slide-up: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-shimmer: shimmer 1.8s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 2s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 8s linear infinite;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+/* ── Custom CSS vars for viz (not in @theme so HSL parts are accessible) ── */
+:root {
+  --viz-default: 220 14% 35%;
+  --viz-compare: 38 92% 58%;
+  --viz-swap: 346 87% 65%;
+  --viz-pivot: 262 83% 70%;
+  --viz-sorted: 142 71% 52%;
+  --viz-found: 142 71% 52%;
+}
+
+/* ── Google Fonts ─────────────────────────────────────────────────────────── */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(222 18% 7%);
+  color: hsl(220 20% 94%);
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+::selection {
+  background: hsl(258 90% 70% / 0.25);
+  color: hsl(220 20% 94%);
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(220 12% 22%); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(220 10% 35%); }
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(258 90% 70%), hsl(199 89% 60%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, hsl(38 92% 58%), hsl(346 87% 65%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass {
+  background: hsl(222 16% 11% / 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid hsl(220 12% 20% / 0.6);
+}
+
+.dot-grid-bg {
+  background-image: radial-gradient(circle, hsl(220 12% 30% / 0.5) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Syntax highlight tokens ─────────────────────────────────────────────── */
+.token-keyword  { color: hsl(262 83% 70%); }
+.token-function { color: hsl(199 89% 60%); }
+.token-string   { color: hsl(142 71% 52%); }
+.token-number   { color: hsl(38 92% 58%); }
+.token-comment  { color: hsl(220 10% 45%); font-style: italic; }
+.token-type     { color: hsl(346 87% 65%); }
+
+/* ── Animate shimmer ──────────────────────────────────────────────────────── */
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(222 16% 11%) 0%,
+    hsl(222 14% 16%) 40%,
+    hsl(222 16% 11%) 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ── Viz bar transitions ─────────────────────────────────────────────────── */
+.viz-bar {
+  transition: height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color 0.18s ease;
+}
+
+/* ── Responsive / Mobile ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .desktop-sidebar { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-btn { display: none !important; }
+}
+
+/* ── Responsive grid helpers ─────────────────────────────────────────────── */
+.resp-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 290px;
+  gap: 14px;
+}
+
+@media (max-width: 1100px) {
+  .resp-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Overflow guard ──────────────────────────────────────────────────────── */
+.page-content {
+  padding: 18px;
+  max-width: 1380px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .page-content { padding: 12px 10px; gap: 10px; }
+}
+
+/* ── Control bar responsive ──────────────────────────────────────────────── */
+.control-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  overflow: visible;
+}
+
+@media (max-width: 768px) {
+  .control-bar { padding: 10px 12px; gap: 8px; }
+  .control-bar input[type="text"],
+  .control-bar input[type="number"] { width: 100% !important; max-width: 100% !important; }
+}
+
+/* ── Mobile padding fix for header ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .page-header { padding-left: 56px !important; }
+}
+
+/* ── DP table scroll ─────────────────────────────────────────────────────── */
+.dp-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Code block scroll ───────────────────────────────────────────────────── */
+pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
