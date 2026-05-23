@@ -23,9 +23,7 @@
   ╚══════════════════════════════════════════════════════════╝
 -->
 
-> 📸 **[ADD HERO SCREENSHOT HERE]**
-> Capture the full home page and save as `public/assets/screenshots/hero.png`
-> Then replace this block with: `![AlgoVista Hero](./public/assets/screenshots/hero.png)`
+![AlgoVista Hero](./public/assets/screenshots/hero.png)
 
 ---
 
@@ -81,7 +79,7 @@ This architecture makes every algorithm unit-testable, replayable frame-by-frame
 
 ## Visualizations
 
-<!-- 
+<!--
   ╔══════════════════════════════════════════════════════════════════╗
   ║  GIF PLACEHOLDER — Sorting Visualization                         ║
   ║  Record a GIF of bubble/merge sort and save as:                  ║
@@ -92,32 +90,32 @@ This architecture makes every algorithm unit-testable, replayable frame-by-frame
 -->
 
 ### Sorting Algorithms
-> 🎬 **[ADD SORTING GIF HERE]** — `public/assets/screenshots/sorting-viz.gif`
+![Sorting](./public/assets/screenshots/sorting-viz.gif)
 
 ---
 
 ### Graph Traversal (BFS / DFS / Dijkstra)
-> 🎬 **[ADD GRAPH GIF HERE]** — `public/assets/screenshots/graph-traversal.gif`
+![Graph](./public/assets/screenshots/graph-traversal.gif)
 
 ---
 
 ### Pseudocode + Multi-language Code Panel
-> 📸 **[ADD PSEUDOCODE SCREENSHOT HERE]** — `public/assets/screenshots/pseudocode-panel.png`
+![Pseudocode Panel](./public/assets/screenshots/pseudocode-panel.png)
 
 ---
 
 ### Algorithm Comparison Mode
-> 📸 **[ADD COMPARISON SCREENSHOT HERE]** — `public/assets/screenshots/comparison-mode.png`
+![Comparison Mode](./public/assets/screenshots/comparison-mode.png)
 
 ---
 
 ### Dynamic Programming Table
-> 🎬 **[ADD DP TABLE GIF HERE]** — `public/assets/screenshots/dp-table.gif`
+![DP Table](./public/assets/screenshots/dp-table.gif)
 
 ---
 
 ### Mobile View
-> 📸 **[ADD MOBILE SCREENSHOT HERE]** — `public/assets/screenshots/mobile-view.png`
+![Mobile View](./public/assets/screenshots/mobile-view.png)
 
 ---
 
