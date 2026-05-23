@@ -183,6 +183,8 @@ This architecture makes every algorithm unit-testable, replayable frame-by-frame
 
 ## Architecture
 
+![AlgoVista Architecture](./public/assets/screenshots/architecture-diagram.png)
+
 ```
 User Interaction (keyboard / click)
           │
